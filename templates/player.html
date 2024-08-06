@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Game - Player {{ player_id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Board Game - Player {{ player_id }}</h1>
+        <div id="player-info"></div>
+        <div id="center-cards"></div>
+        <div id="player-area">
+            <div id="weared-items">
+                <h2>Weared Items</h2>
+                <div class="inventory-slot" data-slot-id="weared-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="inventory-slot" data-slot-id="weared-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="inventory-slot" data-slot-id="weared-3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="inventory-slot" data-slot-id="weared-4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div id="inventory">
+                <h2>Inventory</h2>
+                <div class="inventory-slot" data-slot-id="inventory-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="inventory-slot" data-slot-id="inventory-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="inventory-slot" data-slot-id="inventory-3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="inventory-slot" data-slot-id="inventory-4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="inventory-slot" data-slot-id="inventory-5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="inventory-slot" data-slot-id="inventory-6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+        </div>
+        <div id="dice-roll">
+            <button id="roll-dice" disabled>Roll Dice</button>
+            <div id="dice-result"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        const playerId = {{ player_id }};
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
